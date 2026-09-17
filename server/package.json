@@ -1,0 +1,4 @@
+{
+  "name":"taskflow-api","version":"1.0.0","type":"module","scripts":{"dev":"node --watch src/index.js","start":"node src/index.js","check":"node --check src/index.js"},
+  "dependencies":{"bcryptjs":"latest","cors":"latest","dotenv":"latest","express":"latest","jsonwebtoken":"latest","mongoose":"latest"}
+}
