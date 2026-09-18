@@ -1,52 +1,58 @@
-# Task Management System
+# TaskFlow
 
-A full-stack team workflow application with authentication, role-based access control, project/task management, filtering, dashboard analytics, Docker, and CI.
+TaskFlow is a full-stack task management platform for organizing projects, assigning work, and tracking team progress.
 
-## Stack
-- React 19 + Vite
-- Node.js + Express
-- MongoDB + Mongoose
-- JWT authentication
-- Docker Compose
+## Live Demo
+
+https://task-management-system-three-blush.vercel.app
+
+## Features
+
+- User authentication with JWT
+- Role-based access control
+- Create and manage projects
+- Create tasks with priority and status
+- Update task status in real time
+- Filter tasks by project and status
+- Dashboard metrics for task progress
+- Persistent MongoDB storage
+- Responsive React interface
+- Docker configuration
+- GitHub Actions CI/CD workflow
+
+## Tech Stack
+
+### Frontend
+- React
+- Vite
+- JavaScript
+- CSS
+
+### Backend
+- Node.js
+- Express.js
+- JWT Authentication
+- bcrypt
+
+### Database
+- MongoDB
+- Mongoose
+- MongoDB Atlas
+
+### Deployment
+- Vercel
+- Render
+- Docker
 - GitHub Actions
 
-## Demo features
-- Register/login
-- Roles: `admin`, `manager`, `member`
-- Create projects (admin/manager)
-- Create, assign, edit, and delete tasks
-- Status workflow: Todo → In Progress → Review → Done
-- Priority and due-date tracking
-- Dashboard summary counts
-- Search/filter tasks
-- Secure API middleware and ownership/team checks
+## Architecture
 
-## Quick start
-```bash
-cp .env.example .env
-docker compose up --build
-```
-Open `http://localhost:5174`.
-
-A demo admin is seeded automatically:
-- Email: `admin@example.com`
-- Password: `Demo123!`
-
-Change the seed credentials before any real deployment.
-
-## Local development
-### API
-```bash
-cd server
-npm install
-npm run dev
-```
-### Client
-```bash
-cd client
-npm install
-npm run dev
-```
-
-## GitHub
-The included workflow installs dependencies and builds the client on pushes and pull requests. Push this folder as a standalone repository.
+```text
+React / Vite Frontend
+        |
+        | REST API
+        v
+Node.js / Express Backend
+        |
+        v
+MongoDB Atlas
