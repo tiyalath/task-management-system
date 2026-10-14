@@ -5,7 +5,15 @@ TaskFlow is a full-stack task management platform for organizing projects, assig
 ## Live Demo
 
 https://task-management-system-three-blush.vercel.app
+## Screenshots
 
+### Dashboard
+
+![TaskFlow Dashboard](assets/dashboard.png)
+
+### Projects
+
+![TaskFlow Projects](assets/projects.png)
 ## Features
 
 - User authentication with JWT
@@ -48,11 +56,36 @@ https://task-management-system-three-blush.vercel.app
 ## Architecture
 
 ```text
-React / Vite Frontend
-        |
-        | REST API
-        v
-Node.js / Express Backend
-        |
-        v
-MongoDB Atlas
+                    ┌─────────────────────┐
+                    │     React + Vite    │
+                    │      Frontend       │
+                    │      Vercel         │
+                    └─────────┬───────────┘
+                              │
+                              │ REST API
+                              ▼
+                    ┌─────────────────────┐
+                    │  Node.js + Express  │
+                    │       Backend       │
+                    │       Render        │
+                    └─────────┬───────────┘
+                              │
+                              │ Mongoose
+                              ▼
+                    ┌─────────────────────┐
+                    │    MongoDB Atlas    │
+                    │  Persistent Storage │
+                    └─────────────────────┘
+
+## Key Engineering Highlights
+
+- JWT-based authentication with protected API routes
+- Role-based access control for multi-user workflows
+- Full CRUD support for projects and tasks
+- Task assignment, status, priority, due dates, and filtering
+- Project progress tracking and team visibility
+- Persistent MongoDB Atlas storage
+- Production frontend/backend separation using Vercel and Render
+- Environment-based configuration for local and production deployments
+- Docker support for containerized development
+- GitHub Actions workflow for CI/CD
